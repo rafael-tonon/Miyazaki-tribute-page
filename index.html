@@ -48,41 +48,67 @@
             margin: 20vh 0;
         }
 
-        .carousel {
-            position: relative;
-            overflow: visible;
-            
+        #slider {
+            max-width: 500px;
+            height: 550px;
         }
 
         .cards {
             display: none;
-          /*  width: 80%;
-            box-shadow: 2px 4px 6px black;
-            height: 35vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 10px;*/
         }
 
         .visible {
+            
             display: flex;
-            box-shadow: 2px 4px 6px black;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 10px;
-            animation-name: slide;
-            animation-duration: 1.5s;
         }
 
-        @keyframes slide {
+        .prev {
+        
+            padding: 100px 50px;
+        }
+
+        .next {
+
+        }
+
+        .slideLeft {
+            animation-name: slideLeft;
+            animation-duration: .5s;
+        }
+
+        .slideRight {
+            animation-name: slideRight;
+            animation-duration: .5s;
+        }
+
+        @keyframes slideLeft {
             from {
-                opacity: 0; 
+                margin-left: -300px;
+                width: 100%;
+                opacity: 0;
             }
             to {
+                margin-left: 0;
                 opacity: 1;
+                width: 100%;
             }
         }
+
+        @keyframes slideRight {
+            from {
+                margin-left: 210px;
+                width: 100%;
+                opacity: 0;
+            }
+            to {
+                margin-left: 300;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -97,7 +123,7 @@
             <p>Hayao Miyazaki is a Japanese film director, producer, screenwriter, animator, author, and manga artist. Through a career that has spanned five decades, Miyazaki has attained international acclaim as a masterful storyteller and as a maker of anime feature films and, along with Isao Takahata, co-founded Studio Ghibli, a film and animation studio. Miyazaki has been described as combining elements of Walt Disney, Steven Spielberg and Orson Welles.</p>
 
             <h3>Important events in Miyazaki's life</h3>
-            <section class="carousel">
+            <section id="slider">
                 <div class="cards visible">
                     <img src="images/miyazaki 1.jpg" alt="">
                     <h5>1941</h5>
@@ -106,6 +132,21 @@
                 <div class="cards">
                     <img src="images/miyazaki 2.jpg" alt="">
                     <h5>1963</h5>
+                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                </div>
+                <div class="cards">
+                    <img src="images/miyazaki 3.jpg" alt="">
+                    <h5>1963</h5>
+                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                </div>  
+                <div class="cards">
+                    <img src="images/miyazaki 4.jpg" alt="">
+                    <h5>1963</h5>
+                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                </div>
+                <div class="cards">
+                    <img src="images/miyazaki 2.jpg" alt="">
+                    <h5>1961</h5>
                     <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
                 </div>
                 <button class="prev">&#10094;</button>
