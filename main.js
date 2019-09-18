@@ -48,15 +48,16 @@ function changeSlide(element){
             index++;
             console.log("Current: ", nextSlide, "index: ", index);
             
-        } else if (element == prev && cards[currentSlide].classList.contains("visible")){
-            if (prevSlide < currentSlide && prevSlide >= 0){
-                cards[currentSlide].classList.remove("visible", "slideLeft", "slideRight");
-                cards[prevSlide].classList.add("visible", "slideLeft");
+        } else if (element == prev && cards[currentSlide].classList.contains("visible") && prevSlide < currentSlide && prevSlide >= 0){
+            cards[currentSlide].classList.remove("visible", "slideLeft", "slideRight");
+            cards[prevSlide].classList.add("visible", "slideLeft");
                 
-                index--;
-                console.log("Current: ", prevSlide, "index: ", index);
-            }
-        } 
+            index--;
+            console.log("Current: ", prevSlide, "index: ", index);
+            
+        } else {
+            break;
+        }
     }
 }
 
