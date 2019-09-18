@@ -5,21 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hayao Miyazaki</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /*background: linear-gradient(-45deg, #f5f542, #da42f5);*/
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        main {
+            padding: 5vh;
+            background-color: #fff7db;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        p {
+            text-align: justify;
+            
+        }
+
+        figure {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header > img {
+            border: 2px solid black;
+        }
+
+        #img-div {
+            margin: 20vh 0;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: visible;
+            
+        }
+
+        .cards {
+            display: none;
+          /*  width: 80%;
+            box-shadow: 2px 4px 6px black;
+            height: 35vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;*/
+        }
+
+        .visible {
+            display: flex;
+            box-shadow: 2px 4px 6px black;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;
+            animation-name: slide;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes slide {
+            from {
+                opacity: 0; 
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-
-    </header>
     <!-- id extra colocado pois foi requisitado -->
     <main id="main">
-        <figure id="img-div">
-            <img id="image" src="images/Hayao_Miyazaki.png" alt="Hayao 2008.">
-            <figcaption>Hayao Myazaki</figcaption>
-        </figure>
-        <h1 id="title">Hayao Miyazaki</h1>
-    </main>
-    <footer>
+        <section class="header">
+            <img src="images/miyazaki 3.jpg" alt="Hayao 2008.">
+            <h1 id="title">Hayao Miyazaki</h1>
+        </section>
 
-    </footer>
+        <section id="tribute-info">
+            <p>Hayao Miyazaki is a Japanese film director, producer, screenwriter, animator, author, and manga artist. Through a career that has spanned five decades, Miyazaki has attained international acclaim as a masterful storyteller and as a maker of anime feature films and, along with Isao Takahata, co-founded Studio Ghibli, a film and animation studio. Miyazaki has been described as combining elements of Walt Disney, Steven Spielberg and Orson Welles.</p>
+
+            <h3>Important events in Miyazaki's life</h3>
+            <section class="carousel">
+                <div class="cards visible">
+                    <img src="images/miyazaki 1.jpg" alt="">
+                    <h5>1941</h5>
+                    <p>Hayao Miyazaki was born on January 5.</p>
+                </div>
+                <div class="cards">
+                    <img src="images/miyazaki 2.jpg" alt="">
+                    <h5>1963</h5>
+                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </section>
+            
+
+            <figure id="img-div">
+                    <img id="image" src="images/ghibli movies 2.png" alt="Hayao 2008.">
+                    <figcaption id="img-caption">Some of Studio Ghibli and Miyazaki's most famous works</figcaption>
+            </figure>
+        </section>
+        <a id="tribute-link" href="https://en.wikipedia.org/wiki/Hayao_Miyazaki" target="_blank">See more about this person</a>
+    </main>
+    <script src="main.js"></script>
 </body>
 </html>
