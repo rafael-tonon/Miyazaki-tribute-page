@@ -1,89 +1,55 @@
+//get slider and hidden Id/classes
 var slider = document.getElementById("slider");
 var hidden = document.getElementsByClassName("hidden");
-//var prev = document.getElementsByClassName("prev");
-//var next = document.getElementsByClassName("next");
-var index = 0, touchStart, touchEnd;
+//must declare index variable in global scope so it doesn't get modified by the function later on
+//declared prev and next classes so it's easier to read them later on
+var index = 0, prev=1, next=2, touchStart, touchEnd;
 
-
+//adds event listener touching start controls
 slider.addEventListener('touchstart', e => {
     touchStart = e.touches[0].clientX;
-    //console.log(touchStart); 
 }, false);
 
+//adds event listener touching end controls
 slider.addEventListener('touchend', e => {
     touchEnd = e.changedTouches[0].clientX;
+
+    //result variable so the user doesn't accidentally swipe the slider during while scrolling up or down
     let result = touchEnd - touchStart;
-    //console.log(touchEnd);
-    //console.log("result", result);
     if (touchEnd > touchStart && result > 60){
-        changeSlide(1);
+        changeSlide(prev);
     } else if (touchEnd < touchStart && result < -60){
-        changeSlide(2);
+        changeSlide(next);
     }
-    // Process the data ... 
 }, false);
 
+//main function that changes the slides
 function changeSlide(element){
     var currentSlide = index;
     let prevSlide = index - 1;
     let nextSlide = index + 1;
-    //Looping that goes through all the elements that have the "hidden" class
+    //looping to remove "hidden" and add "cards" classes
     for (currentSlide=index; currentSlide<=nextSlide; currentSlide++){
-        //If class card exist then remove it and goes to the next card, if it's incard then it will make it card.
-        if (element == 2 && hidden[currentSlide].classList.contains("card") && currentSlide < nextSlide && nextSlide < hidden.length){
+        //if class card exist then remove it and goes to the next card, if it's hidden then it add card class to make it visible.
+        if (element == next && hidden[currentSlide].classList.contains("card") && currentSlide < nextSlide && nextSlide < hidden.length){
             
             hidden[currentSlide].classList.remove("card", "slideLeft", "slideRight");
             hidden[nextSlide].classList.add("card", "slideRight");
 
+            //adds to index so it goes so slide to the right
             index++;
-            console.log("Current: ", nextSlide, "index: ", index);
+            //console.log("Current: ", nextSlide, "index: ", index);
             
-        } else if (element == 1 && hidden[currentSlide].classList.contains("card") && prevSlide < currentSlide && prevSlide >= 0){
+        } else if (element == prev && hidden[currentSlide].classList.contains("card") && prevSlide < currentSlide && prevSlide >= 0){
             hidden[currentSlide].classList.remove("card", "slideLeft", "slideRight");
             hidden[prevSlide].classList.add("card", "slideLeft");
-                
-            index--;
-            console.log("Current: ", prevSlide, "index: ", index);
             
+            //remove from index so it goes one slide to the left
+            index--;
+            //console.log("Current: ", prevSlide, "index: ", index);
         } else {
             break;
         }
     }
 }
 
-
-
-
-
-//código funcionando
-/*var carousel = document.getElementsByClassName('carousel');
-var hidden = document.getElementsByClassName("hidden");
-var prev = document.getElementsByClassName("prev");
-var next = document.getElementsByClassName("next");
-var x, y;
-
-
-prev[0].addEventListener("click", e => {
-    changeSlide(prev);
-});
-next[0].addEventListener("click", e => {
-    
-    changeSlide(next)
-});
-
-function changeSlide(element){
-    if (element == prev){
-        console.log("elemento");
-    }
-    //Looping that goes through all the elements that have the "hidden" class
-    for (x=0; x<hidden.length; x++){
-        //If class card exist then remove it and goes to the next card, if it's incard then it will make it card.
-        if (hidden[x].classList.contains("card")){
-            hidden[x].classList.remove("card", "slideLeft", "slideRight");
-        } else if (element == prev){
-            hidden[x].classList.add("slideLeft", "card");
-        } else {
-            hidden[x].classList.add("card", "slideRight");
-        }
-    }
-}*/
