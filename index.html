@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hayao Miyazaki</title>
     <style>
+
+        /* globals */
         body {
             margin: 0;
             padding: 0;
@@ -20,11 +22,11 @@
 
         img {
             max-width: 100%;
+            max-height: 100%;
         }
 
         p {
             text-align: justify;
-            
         }
 
         figure {
@@ -32,6 +34,8 @@
             margin: 0;
             text-align: center;
         }
+
+        /* header */
 
         .header {
             display: flex;
@@ -48,39 +52,49 @@
             margin: 20vh 0;
         }
 
+        /* Slider */
         #slider {
             max-width: 500px;
-            height: 550px;
+            height: 650px;
         }
 
-        .cards {
+        /* Class that hides cards*/
+        .hidden {
             display: none;
         }
 
-        .visible {
-            
+        .card {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
         }
 
         .prev {
-        
-            padding: 100px 50px;
+            display: none;
         }
 
         .next {
-
+            display: none;
         }
 
+        .mobileImg{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+
+        /* Sliding animation */
         .slideLeft {
             animation-name: slideLeft;
-            animation-duration: .5s;
+            animation-duration: .7s;
+            animation-timing-function: ease-out;
         }
 
         .slideRight {
             animation-name: slideRight;
-            animation-duration: .5s;
+            animation-duration: .7s;
+            animation-timing-function: ease-out;
         }
 
         @keyframes slideLeft {
@@ -124,30 +138,78 @@
 
             <h3>Important events in Miyazaki's life</h3>
             <section id="slider">
-                <div class="cards visible">
-                    <img src="images/miyazaki 1.jpg" alt="">
-                    <h5>1941</h5>
-                    <p>Hayao Miyazaki was born on January 5.</p>
-                </div>
-                <div class="cards">
-                    <img src="images/miyazaki 2.jpg" alt="">
-                    <h5>1963</h5>
-                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
-                </div>
-                <div class="cards">
-                    <img src="images/miyazaki 3.jpg" alt="">
-                    <h5>1963</h5>
-                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
-                </div>  
-                <div class="cards">
+                <div class="hidden card">
                     <img src="images/miyazaki 4.jpg" alt="">
-                    <h5>1963</h5>
-                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                    <span class="counter">1/</span>
+                    <h5>1941</h5>
+                    <p>1941. Hayao Miyazaki was born on January 5th of 1941, during the second World War. His father was the director of an aircraft parts manufacturing company, which Miyazaki admitted later in life that he felt guilty over his family's profiting from the war and their subsequent affluent lifestyle. During High School he decided to pursue a manga artist career.</p>
                 </div>
-                <div class="cards">
-                    <img src="images/miyazaki 2.jpg" alt="">
-                    <h5>1961</h5>
-                    <p>Miyazaki graduated from university and got his first job at an animation studio.</p>
+                <div class="hidden">
+                    <img src="images/1963_hayao.png" alt="">
+                    <span class="counter">2/</span>
+                    <h5>1963</h5>
+                    <p>Miyazaki graduated from university with a degree in economics and politics and got his first job at an animation studio called <a href="http://corp.toei-anim.co.jp/en/" target="_blank" rel="noopener noreferrer">Toei Animation</a>. He was a leader in a labor dispute soon after his arrival, and became chief secretary of Toei's labor union in 1964.</p>
+                </div>
+                <div class="hidden">
+                    <img src="images/1968_horus.png" alt="">
+                    <span class="counter">3/</span>
+                    <h5>1968</h5>
+                    <p>Miyazaki worked as chief animator, concept artist, and scene designer on <a href="https://www.imdb.com/title/tt0063668/" target="_blank">The Great Adventure of Horus, Prince of the Sun</a>, a movie directed by Isao Takahata, spawning a lifelong collaboration and friendship between them.</p>
+                </div>  
+                <div class="hidden">
+                    <img src="images/1979_cagliostro.png" alt="">
+                    <span class="counter">4/</span>
+                    <h5>1979</h5>
+                    <p>1979, Miyazaki's career as a movie director debuted when he was hired to make a movie adaptation of the popular anime and manga Lupin the 3rd, the movie was called <a href="https://www.imdb.com/title/tt0079833" target="_blank">The Castle of Cagliostro</a>.</p>
+                </div>
+                <div class="hidden">
+                    <img src="images/1982_nausicaa.png" alt="">
+                    <span class="counter">5/</span>
+                    <h5>1982</h5>
+                    <p>In the early 80s two of Miyazaki's movie ideas turned out unsuccessful, he eventually ended up signing a contract with one of the companies that let's him turn his sketches and ideas into a manga for the magazine. He then ended up creating Nausicaa of the Valley of the Wind which ran from 1982 to 1994.</p>
+                </div>
+                <div class="hidden">
+                    <img src="images/1984_nausicaa movie.png" alt="">
+                    <span class="counter">6/</span>
+                    <h5>1984</h5>
+                    <p>Following the success of his manga, a movie adaptation directed by Miyazaki began production. He encountered many difficulties, as he only had 16 chapters of the manga to work with. <a href="https://www.imdb.com/title/tt0087544" target="_blank">Nausicaä of the Valley of the Wind</a> was a huge success and is seen by critics as a seminal influence on the development of anime.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/ghibli movies.png" alt="">
+                    <span class="counter">7/</span>
+                    <h5>1985</h5>
+                    <p>Miyazaki, Takahata, Tokuma and Suzuki who all worked together in the production of Nausicaä, ended up banding together and founded animation production company Studio Ghibli.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/1986_laputa.png" alt="">
+                    <span class="counter">8/</span>
+                    <h5>1986</h5>
+                    <p>Studio Ghibli's first movie,  <a href="https://www.imdb.com/title/tt0092067" target="_blank">Laputa: Castle in the Sky</a>, was released. The movie was heavily inspired by Greek architecture and other European urbanistic styles, Miyazaki was also inspired by a Welsh mining town, which he admired the miners' dedication to their work and community.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/1988_totoro.png" alt="">
+                    <span class="counter">9/</span>
+                    <h5>1988</h5>
+                    <p><a href="https://www.imdb.com/title/tt0096283" target="_blank">My Neighbor Totoro</a>, Miyazaki's second movie at Studio Ghibli, was released. My Neighbor Totoro features the theme of the relationship between the environment and humanity, a contrast to Nausicaä, which emphasizes technology's negative effect on nature. The film was commercially unsuccessful at the box office, though merchandising was successful, and it received critical acclaim.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/1997_mononoke.png" alt="">
+                    <span class="counter">10/</span>
+                    <h5>1997</h5>
+                    <p>Upon its premiere on July 12, 1997, <a href="https://www.imdb.com/title/tt0119698" target="_blank">Princess Mononoke</a> was critically acclaimed, becoming the first animated film to win the Japan Academy Prize for Picture of the Year. The film was also commercially successful and became the highest-grossing film ever in Japan for several months. It was also seen as the introduction of Studio Ghibli to global markets.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/2001_chihiro.png" alt="">
+                    <span class="counter">11/</span>
+                    <h5>2001</h5>
+                    <p>Miyazaki's next film was conceived while on vacation at a mountain cabin with his family and five young girls who were family friends. Miyazaki realised that he had not created a film for ten-year-old girls, and set out to do so. He decided to produce the film about a female heroine whom they could look up to. <a href="https://www.imdb.com/title/tt0245429">Spirited Away</a> was released. It won the Academy Awards for Best Animated Feature and it is still to this day the highest grossing movie of all time in Japan.</p>
+                </div>
+                <div class="hidden">
+                    <img class="mobileImg" src="images/miyazaki 2.jpg" alt="">
+                    <span class="counter">12/</span>
+                    <h5>2002 to Present</h5>
+                    <p>Miyazaki worked on several famous and successful animated movies such as <a href="" target="_blank">Howls Moving Castle</a> , <a href="" target="_blank">Ponyo</a> and <a href="" target="_blank">The Wind Rises</a>.
+                        <br>He retired in 2013 and it's currently focusing in creating shorts films and manga.</p>
                 </div>
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
@@ -155,7 +217,7 @@
             
 
             <figure id="img-div">
-                    <img id="image" src="images/ghibli movies 2.png" alt="Hayao 2008.">
+                    <img id="image" class="mobileImg" src="images/ghibli movies 2.png" alt="Hayao 2008.">
                     <figcaption id="img-caption">Some of Studio Ghibli and Miyazaki's most famous works</figcaption>
             </figure>
         </section>
