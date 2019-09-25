@@ -29,7 +29,7 @@ function changeSlide(element){
     let prevSlide = index - 1;
     let nextSlide = index + 1;
     //looping to remove "hidden" and add "cards" classes
-    for (currentSlide=index; currentSlide<=nextSlide; currentSlide++){
+    for (currentSlide; currentSlide < nextSlide; currentSlide++){
         //if class card exist then remove it and goes to the next card, if it's hidden then it add card class to make it visible.
         if (element == next && hidden[currentSlide].classList.contains("card") && currentSlide < nextSlide && nextSlide < hidden.length){
             
