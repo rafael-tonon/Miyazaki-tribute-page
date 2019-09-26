@@ -91,11 +91,11 @@ section {
 
 /* Sliding animation, one for swiping left and one for swiping right*/
 .slideLeft {
-    animation: slideLeft 1s ease-out;  
+    animation: slideLeft .7s ease-out;  
 }
 
 .slideRight {
-    animation: slideRight 1s ease-out;
+    animation: slideRight .7s ease-out;
 }
 
 @keyframes slideLeft {
