@@ -1,0 +1,26 @@
+
+@media (min-width: 500px){
+    @media (orientation: landscape){
+
+        .slider {
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        .card {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .card>div{
+            width: 48%;
+        }
+
+
+        .card>img,
+        .mobileImg {
+            height: 100%;
+        }
+    }
+}

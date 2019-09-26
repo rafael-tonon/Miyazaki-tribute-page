@@ -1,17 +1,17 @@
 //get slider and hidden Id/classes
-var slider = document.getElementById("slider");
+var slider = document.getElementsByClassName("slider");
 var hidden = document.getElementsByClassName("hidden");
 //must declare index variable in global scope so it doesn't get modified by the function later on
 //declared prev and next classes so it's easier to read them later on
 var index = 0, prev=1, next=2, touchStart, touchEnd;
 
 //adds event listener touching start controls
-slider.addEventListener('touchstart', e => {
+slider[0].addEventListener('touchstart', e => {
     touchStart = e.touches[0].clientX;
 }, false);
 
 //adds event listener touching end controls
-slider.addEventListener('touchend', e => {
+slider[0].addEventListener('touchend', e => {
     touchEnd = e.changedTouches[0].clientX;
 
     //result variable so the user doesn't accidentally swipe the slider during while scrolling up or down
